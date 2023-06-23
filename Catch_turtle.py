@@ -32,20 +32,6 @@ print("Başlangıç skor.", score)
 süre = turtle.Turtle()
 zaman = turtle.Turtle()
 
-# while times > 0:
-
-#     for i in range(55):
-
-#         time.sleep(1/3)
-#         kaplumbağa.hideturtle()
-#         kaplumbağa.goto(randint(-500,500),randint(-400,400))
-#         kaplumbağa.speed(3)
-
-#         kaplumbağa.showturtle()
-#         time.sleep(1/50)
-        
-#         times -= 1
-
 class Countdown():
     
     def __init__(self):
@@ -53,20 +39,20 @@ class Countdown():
         self.süre = süre  
         self.skor = skor
         times = 30
-
+        clicks = 0
         while times + 1 > 0:
             süre.hideturtle()
             süre.penup()
             süre.color("blue")
-            süre.goto(0, 180) # süre tablosunun konumunu belirtir.
-            # süre.write(f"Time: {times}", font = ("Verdana", 40, "bold"), align = "center")
+            süre.goto(-30, 180) # süre tablosunun konumunu belirtir.
             süre.write(f"Time: ", font = ("Verdana", 40, "bold"), align = "center")
 
             zaman.hideturtle()
             zaman.penup()
             zaman.color("blue")
-            zaman.goto(130, 180)
+            zaman.goto(90, 180)
             zaman.write(f"{times}", font = ("Verdana", 40, "bold"), align = "center")
+            print(f"Süre: {times}")
             times -= 1
             time.sleep(1)
             zaman.clear()
@@ -74,32 +60,25 @@ class Countdown():
             if times == 0:
                 break
             else:
-                time.sleep(1/4)
+                # time.sleep(60)
                 kaplumbağa.hideturtle()
                 kaplumbağa.goto(randint(-500,500),randint(-400,400))
-                kaplumbağa.speed(1)
+                # kaplumbağa.speed(0.01)
+                hız = 60 / 0.000000000000000000000000000000000000000000009
+                kaplumbağa.speed(0.5)
                 kaplumbağa.showturtle()
-                time.sleep(1/2)
-                times -= 1
+                # time.sleep(60 / 0.06)
 
-    # def turtle_escape(self):
-    # def __init__(self):
 
-    #     for i in range(times):
+            # kaplumbağa.speed(5/55)
+            
 
-    #         time.sleep(1/3)
-    #         kaplumbağa.hideturtle()
-    #         kaplumbağa.goto(randint(-500,500),randint(-400,400))
-    #         kaplumbağa.speed(3)
+    #     clicks += 1
+    #     turtle.write(f"Tıklama sayısı{clicks}")
 
-    #         kaplumbağa.showturtle()
-    #         time.sleep(1/50)
+    # turtle.onclick(kaplumbağa)
 
 Countdown()
-# escape_turtle = Countdown()
-# escape_turtle.turtle_escape()
-
-
 
 süre.clear()
 süre.goto(0, 180)
@@ -109,5 +88,3 @@ süre.write(f"Time is Over!", font = ("Verdana", 40, "bold"), align = "center")
 
 print("Skor", score)
 turtle.mainloop()
-
-# turtle.done()
