@@ -8,8 +8,8 @@ board = turtle.Screen()
 board.title("Catch The Turtle")
 board.setup(1200,800)
 skor = turtle.Turtle()
-kaplumbağa = turtle.Turtle()
 
+kaplumbağa = turtle.Turtle()
 kaplumbağa.penup()
 kaplumbağa.shape("turtle")
 kaplumbağa.shapesize(3)
@@ -17,14 +17,10 @@ kaplumbağa.shapesize(3)
 score = 0
 times = 3
 
-# kaplumbağa.onclick(turtle.goto)
-
 skor.hideturtle()
 skor.penup()
 skor.color("red")
 skor.goto(0 ,250) # skor tablosunun konumunu belirtir.
-
-# score = score + kaplumbağa.onclick(turtle.goto)
 
 skor.write(f"Score: {score}", font = ("Verdana", 50, "normal"), align="center")
 print("Başlangıç skor.", score)
@@ -35,11 +31,10 @@ zaman = turtle.Turtle()
 class Countdown():
     
     def __init__(self):
-        # self.süre = turtle.Turtle()
         self.süre = süre  
         self.skor = skor
         times = 30
-        clicks = 0
+
         while times + 1 > 0:
             süre.hideturtle()
             süre.penup()
@@ -60,23 +55,11 @@ class Countdown():
             if times == 0:
                 break
             else:
-                # time.sleep(60)
                 kaplumbağa.hideturtle()
                 kaplumbağa.goto(randint(-500,500),randint(-400,400))
-                # kaplumbağa.speed(0.01)
-                hız = 60 / 0.000000000000000000000000000000000000000000009
+                kaplumbağa.speed(0)
                 kaplumbağa.speed(0.5)
                 kaplumbağa.showturtle()
-                # time.sleep(60 / 0.06)
-
-
-            # kaplumbağa.speed(5/55)
-            
-
-    #     clicks += 1
-    #     turtle.write(f"Tıklama sayısı{clicks}")
-
-    # turtle.onclick(kaplumbağa)
 
 Countdown()
 
